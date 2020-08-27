@@ -1,0 +1,588 @@
+<html lang="pt">
+<head>
+	<title>
+		Login | Pearson</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+	<meta name="keywords">
+<meta name="description">
+<meta name="robots" content="index,nofollow">
+<link rel="shortcut icon" type="image/x-icon" media="all" href="/store/_ui/responsive/theme-pearson/images/favicon.png" />
+
+	<link rel="stylesheet" type="text/css" media="all" href="/store/_ui/addons/assistedservicestorefront/responsive/common/css/assistedservicestorefront.css"/>
+
+	<link rel="stylesheet" href="/store/_ui/responsive/common/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="/store/_ui/responsive/common/slick/slick.css">
+	<link rel="stylesheet" href="/store/_ui/responsive/common/slick/slick-theme.css">
+	<link rel="stylesheet" href="/store/_ui/responsive/common/fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="/store/_ui/responsive/theme-pearson/styles/main.css">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137485937-1" ></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-137485937-1');
+    </script>
+
+	<script type="text/javascript" src="/store/_ui/shared/js/analyticsmediator.js"></script>
+<script type="text/javascript">
+/* Google Analytics */
+
+var googleAnalyticsTrackingId = 'your_google_analytics_tracking_id';
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', googleAnalyticsTrackingId]);
+
+
+		_gaq.push(['_trackPageview']);
+	
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+
+function trackAddToCart_google(productCode, quantityAdded) {
+	_gaq.push(['_trackEvent', 'Cart', 'AddToCart', productCode, quantityAdded]);
+}
+
+function trackUpdateCart(productCode, initialQuantity, newQuantity) {
+	if (initialQuantity != newQuantity) {
+		if (initialQuantity > newQuantity) {
+			_gaq.push(['_trackEvent', 'Cart', 'RemoveFromCart', productCode, initialQuantity - newQuantity]);
+		} else {
+			_gaq.push(['_trackEvent', 'Cart', 'AddToCart', productCode, newQuantity - initialQuantity]);
+		}
+	}
+}
+
+function trackRemoveFromCart(productCode, initialQuantity) {
+	_gaq.push(['_trackEvent', 'Cart', 'RemoveFromCart', productCode, initialQuantity]);
+}
+
+window.mediator.subscribe('trackAddToCart', function(data) {
+	if (data.productCode && data.quantity)
+	{
+		trackAddToCart_google(data.productCode, data.quantity);
+	}
+});
+
+window.mediator.subscribe('trackUpdateCart', function(data) {
+	if (data.productCode && data.initialCartQuantity && data.newCartQuantity)
+	{
+		trackUpdateCart(data.productCode, data.initialCartQuantity, data.newCartQuantity);
+	}
+});
+
+window.mediator.subscribe('trackRemoveFromCart', function(data) {
+	if (data.productCode && data.initialCartQuantity)
+	{
+		trackRemoveFromCart(data.productCode, data.initialCartQuantity);
+	}
+});
+</script>
+</head>
+
+<body class="page-login pageType-ContentPage template-pages-templatePearsonDb pageLabel--login language-pt">
+	<main data-currency-iso-code="BRL">
+			<div data-component="overlay spinner" class="overlay"></div>
+
+			<div class="wrapper">
+
+				<div class="row" data-component="login">
+        <div class="col-xs-12 col-sm-6">
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+                    <div class="header text-center">
+                        <div class="logo-login text-center">
+                            <img src="/store/_ui/responsive/common/images/logos/logo-pearson-v.svg" alt="Logo Pearson" />
+                        </div>
+
+                        <div class="info">
+                            <h5 class="">
+                                <strong>Bem vindo, entre com o seu login</strong>
+                            </h5>
+                        </div>
+                    </div>
+                    <form id="loginForm" action="/store/j_spring_security_check" method="post"><div class="field text-uppercase">
+                            <div class="options">
+                                <label class="label">E-mail</label>
+                            </div>
+                            <input class="input" type="text" name="j_username" value="" id="j_username"
+                                   path="j_username"/>
+                        </div>
+                        <div class="field text-uppercase">
+                            <label class="label">senha</label>
+                            <input type="password" name="j_password" id="j_password" class="input" path="j_password"
+                                   value=""/>
+                        </div>
+                        <div class="actions text-center">
+                            <button class="submit text-uppercase border-radius-button" type="button" data-send-form>Entrar</button>
+                            <button type="button" class="btn button-text" data-trigger="password" data-toggle="modal"
+                                    data-target="#forget-password-modal" data-content-url="/store/login/pw/request">
+                                Esqueceu sua senha?</button>
+                            <button type="button" class="btn button-text" data-trigger="email" data-toggle="modal"
+                                    data-target="#forget-email-modal" data-content-url="">
+                                Esqueceu seu e-mail?</button>
+                        </div>
+                    <div>
+<input type="hidden" name="CSRFToken" value="6278c0f9-76f9-48aa-88b4-9cfeb1d81ed9" />
+</div></form></div>
+            </div>
+
+            <div class="text-center margin-top-30">
+              <button type="button" class="btn btn-default margin-bottom-30" data-toggle="modal" data-target="#contacts-modal">
+                <i class="glyphicon glyphicon-earphone margin-right-5"></i>
+                Contatos</button>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+            <div class="row">
+                <div class="full-banner-login">
+                    <div class="banner__component banner">
+	<img title="" alt=""
+				src="https://hyb-pea-qas-stc1.fhondemand.com/sys-master/images/h46/hb0/8842584588318/banner_login.jpg">
+		</div></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" data-component="login" tabindex="-1" role="dialog" id="contacts-modal">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center forgotten-password">
+            <h4 class="modal-title left">Contatos</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <i class="glyphicon glyphicon-remove"></i>
+              Fechar
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="row contacts">
+              <div class="col-xs-12 col-md-6">
+                <div class="contacts__title">
+                  Atitude</div>
+                <div class="contacts__info">
+                  <span class="glyphicon glyphicon-earphone"></span>
+                  (19) 3743 2077
+                </div>
+                <div class="contacts__info">
+                  <span class="glyphicon glyphicon-envelope"></span>
+                  <a href="mailto:atendimento.atitude@pearson.com" title="">atendimento.atitude@pearson.com</a>
+                </div>
+
+                <div class="contacts__title">
+                  COC</div>
+                <div class="contacts__info">
+                  <span class="glyphicon glyphicon-earphone"></span>
+                  (19) 3743 5544
+                </div>
+                <div class="contacts__info">
+                  <span class="glyphicon glyphicon-envelope"></span>
+                  <a href="mailto:atendimento.coc@pearson.com" title="">atendimento.coc@pearson.com</a>
+                </div>
+
+                <div class="contacts__title">
+                  Dom Bosco</div>
+                <div class="contacts__info">
+                  <span class="glyphicon glyphicon-earphone"></span>
+                  (19) 3743 5519
+                </div>
+                <div class="contacts__info">
+                  <span class="glyphicon glyphicon-envelope"></span>
+                  <a href="mailto:atendimento.dombosco@pearson.com" title="">atendimento.dombosco@pearson.com</a>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-md-6">
+                <div class="contacts__title">
+                  Education</div>
+                <div class="contacts__subtitle">
+                  Livreiros</div>
+                <div class="contacts__info">
+                  <span class="glyphicon glyphicon-earphone"></span>
+                  (19) 3743 2155
+                </div>
+                <div class="contacts__info">
+                  <span class="glyphicon glyphicon-envelope"></span>
+                  <a href="mailto:dplivreiros.atendimento@pearson.com" title="">dplivreiros.atendimento@pearson.com</a>
+                </div>
+
+                <div class="contacts__subtitle">
+                  Escola</div>
+                <div class="contacts__info">
+                  <span class="glyphicon glyphicon-earphone"></span>
+                  (19) 3743 2060
+                </div>
+                <div class="contacts__info">
+                  <span class="glyphicon glyphicon-envelope"></span>
+                  <a href="mailto:escolas.atendimento@pearson.com" title="">escolas.atendimento@pearson.com</a>
+                </div>
+
+                <div class="contacts__subtitle">
+                  Bilíngue </div>
+                <div class="contacts__info">
+                  <span class="glyphicon glyphicon-earphone"></span>
+                  (19) 3743 5525
+                </div>
+                <div class="contacts__info">
+                  <span class="glyphicon glyphicon-envelope"></span>
+                  <a href="mailto:professoraluno.atendimento@pearson.com" title="">professoraluno.atendimento@pearson.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" data-component="login" tabindex="-1" role="dialog" id="forget-password-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center forgotten-password">
+                    <h4 class="modal-title left">Recuperar senha</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="glyphicon glyphicon-remove"></i>
+                        Fechar
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="messages" data-messages></div>
+                    <form id="forgottenPwdForm" action="/store/login" method="post"><div class="form-group">
+                            <p class="form-text">
+                                Por favor, informe o endereço de e-mail. Um link para mudar sua senha será enviado ao seu e-mail cadastrado.</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="forgottenPwd.email">
+                                Endereço de Email:</label>
+                            <input type="text" id="email" name="email" class="input"/>
+                        </div>
+                        <button class="submit-modal text-uppercase" type="button" data-toggle="modal"
+                                data-target="#password-forgotten-modal" data-submit>
+                            Enviar e-mail
+                        </button>
+                    <div>
+<input type="hidden" name="CSRFToken" value="6278c0f9-76f9-48aa-88b4-9cfeb1d81ed9" />
+</div></form></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" data-component="login" tabindex="-1" role="dialog" id="forget-email-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center forgotten-password">
+                    <h4 class="modal-title left">Recuperar e-mail</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="send-email-close">
+                        <i class="glyphicon glyphicon-remove"></i>
+                        Fechar
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="messages" data-messages></div>
+                    <form id="forgottenEmailForm" action="/store/login" method="post"><div class="form-group">
+                            <p class="form-text">
+                                Por favor, informe o CNPJ para recuperar os e-mails cadastrados.</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="forgottenPwd.email">CNPJ</label>
+                            <input type="text" class="input" required="required" name="cnpj" data-mask="00.000.000/0000-00"/>
+                        </div>
+                        <button class="submit-modal text-uppercase" type="button"
+                                data-target="#forget-email-modal" data-submit-email>
+                            Requisitar e-mail</button>
+                        <div class="result" data-result></div>
+                    <div>
+<input type="hidden" name="CSRFToken" value="6278c0f9-76f9-48aa-88b4-9cfeb1d81ed9" />
+</div></form></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" data-component="login" tabindex="-1" role="dialog" id="register">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center forgotten-password">
+                    <h4 class="modal-title left">Faça seu cadastro</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="glyphicon glyphicon-remove"></i>
+                        Fechar
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="messages" data-messages></div>
+                    <form id="pearsonRegisterForm" action="/store/login" method="post"><div class="form-group">
+                            <p class="form-text">
+                                Preencha o formulário abaixo com suas informações</p>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="pearsonRegisterForm.razaosocial">Razão social</label>
+                            <input type="text" class="input" required="required" name="razaosocial"/>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="pearsonRegisterForm.cnpj">CNPJ</label>
+                            <input type="text" class="input" required="required" name="cnpj" data-mask="99.999.999/9999-99" placeholder="__.___.___/____-__"/>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="pearsonRegisterForm.inscricaoestadual">Inscrição estadual</label>
+                            <input type="text" class="input" required="required" name="inscricaoestadual"/>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="pearsonRegisterForm.cep">CEP</label>
+                            <input type="text" class="input" required="required" name="cep" id="cep" data-cep data-mask="99.999-9999" placeholder="_____-___"/>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="pearsonRegisterForm.address">Endereço</label>
+                            <input type="text" class="input" required="required" id="address"/>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="pearsonRegisterForm.number">Número</label>
+                            <input type="text" class="input" required="required" id="number"/>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="pearsonRegisterForm.complement">Complemento</label>
+                            <input type="text" class="input" name="complement"/>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="pearsonRegisterForm.neighborhood">Bairro</label>
+                            <input type="text" class="input" required="required" id="neighborhood"/>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="pearsonRegisterForm.state">Estado</label>
+                                <select class="input" required="required" name="state" id="state">
+                                <option value="" selected>Selecione um estado</option>
+                                <option id="AC" class="12">Acre</option>
+                                <option id="AL" class="27">Alagoas</option>
+                                <option id="AM" class="13">Amazonas</option>
+                                <option id="AP" class="16">Amapá</option>
+                                <option id="BA" class="29">Bahia</option>
+                                <option id="CE" class="23">Ceará</option>
+                                <option id="DF" class="53">Distrito Federal</option>
+                                <option id="ES" class="32">Espírito Santo</option>
+                                <option id="GO" class="52">Goiás</option>
+                                <option id="MA" class="21">Maranhão</option>
+                                <option id="MG" class="31">Minas Gerais</option>
+                                <option id="MS" class="50">Mato Grosso do Sul</option>
+                                <option id="MT" class="51">Mato Grosso</option>
+                                <option id="PA" class="15">Pará</option>
+                                <option id="PB" class="25">Paraíba</option>
+                                <option id="PE" class="26">Pernambuco</option>
+                                <option id="PI" class="22">Piauí</option>
+                                <option id="PR" class="41">Paraná</option>
+                                <option id="RJ" class="33">Rio de Janeiro</option>
+                                <option id="RN" class="24">Rio Grande do Norte</option>
+                                <option id="RO" class="11">Rondônia</option>
+                                <option id="RR" class="14">Roraima</option>
+                                <option id="RS" class="43">Rio Grande do Sul</option>
+                                <option id="SC" class="42">Santa Catarina</option>
+                                <option id="SE" class="28">Sergipe</option>
+                                <option id="SP" class="35">São Paulo</option>
+                                <option id="TO" class="17">Tocantins</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="pearsonRegisterForm.city">Cidade</label>
+                                <select id="city" class="input" required="required" disabled name="city">
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="pearsonRegisterForm.name">Nome</label>
+                            <input type="text" class="input" required="required" name="name"/>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="pearsonRegisterForm.phone">Telefone</label>
+                            <input type="text" class="input" required="required" name="phone" data-mask="(99) 9 9999-9999" placeholder="(__) _ ____-____"/>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="pearsonRegisterForm.email">Email</label>
+                            <input type="text" class="input" required="required" name="email"/>
+                        </div>
+
+                        <button class="submit-modal text-uppercase" type="button" data-toggle="modal"
+                                data-url="/store/register/newcustomer" data-target="#register" data-submit-new-customer>
+                            Finalizar cadastro</button>
+                    <div>
+<input type="hidden" name="CSRFToken" value="6278c0f9-76f9-48aa-88b4-9cfeb1d81ed9" />
+</div></form></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+		</main>
+
+	<script type="text/javascript">
+		/*<![CDATA[*/
+		
+		var ACC = { config: { message: { error: { } } }, message: {} };
+			ACC.config.contextPath = "/store";
+			ACC.config.encodedContextPath = "/store";
+			ACC.config.commonResourcePath = "/store/_ui/responsive/common";
+			ACC.config.themeResourcePath = "/store/_ui/responsive/theme-pearson";
+			ACC.config.siteResourcePath = "/store/_ui/responsive/site-pearson";
+			ACC.config.rootPath = "/store/_ui/responsive";	
+			ACC.config.CSRFToken = "6278c0f9-76f9-48aa-88b4-9cfeb1d81ed9";
+			ACC.pwdStrengthVeryWeak = 'password.strength.veryweak';
+			ACC.pwdStrengthWeak = 'password.strength.weak';
+			ACC.pwdStrengthMedium = 'password.strength.medium';
+			ACC.pwdStrengthStrong = 'password.strength.strong';
+			ACC.pwdStrengthVeryStrong = 'password.strength.verystrong';
+			ACC.pwdStrengthUnsafePwd = 'password.strength.unsafepwd';
+			ACC.pwdStrengthTooShortPwd = 'password.strength.tooshortpwd';
+			ACC.pwdStrengthMinCharText = 'password.strength.minchartext';
+			ACC.accessibilityLoading = 'aria.pickupinstore.loading';
+			ACC.accessibilityStoresLoaded = 'aria.pickupinstore.storesloaded';
+			ACC.config.googleApiKey="";
+			ACC.config.googleApiVersion="3.7";
+			
+			ACC.message.orderDivergent = 'Solicitação enviada com sucesso!';
+
+		
+			ACC.autocompleteUrl = '/store/search/autocompleteSecure';
+
+			
+			ACC.config.loginUrl = '/store/login';
+
+			
+			ACC.config.authenticationStatusUrl = '/store/authentication/status';
+
+			
+
+			ACC.config.message.error.notselected        = 'Selecione formas de pagamento para todos os bimestres!';
+			ACC.config.message.error.unauthorised       = '<b>Tentativa de pagamento com cartão de crédito falha.</b><br><br>Prezado cliente,<br><br><b>1.</b> Verifique se os dados digitados estão corretos<br><b>2.</b> Caso o erro persista, entre em contato com a administradora do cartão';
+			ACC.config.message.error.placeorder         = 'Houve um problema ao finalizar a compra! Entre em contato com o nosso suporte e tente novamente mais tarde.';
+			ACC.config.message.error.multiplePayment    = 'Para realizar sua compra com modos de pagamento distintos para cada coleção, o seu carrinho foi dividido em mais de um pedido. Porém, um erro ocorreu no modo de pagamento de um ou mais destes pedidos! Por favor, confira o(s) pedido(s) gerado(s) na página de listagem de pedidos da sua conta e tente novamente mais tarde!';
+
+
+		/*]]>*/
+	</script>
+	<script type="text/javascript">
+	/*<![CDATA[*/
+	ACC.addons = {};	//JS holder for addons properties
+			
+	
+		ACC.addons.stocknotificationaddon = [];
+		
+		ACC.addons.notificationaddon = [];
+		
+		ACC.addons.b2bacceleratoraddon = [];
+		
+		ACC.addons.assistedservicestorefront = [];
+		
+				ACC.addons.assistedservicestorefront['asm.timer.min'] = 'min';
+			
+	/*]]>*/
+</script>
+<script type="text/javascript" src="/store/_ui/shared/js/generatedVariables.js"></script><script type="text/javascript" src="/store/_ui/responsive/common/js/jquery-3.2.1.min.js"></script>
+
+		<script type="text/javascript" src="/store/_ui/responsive/common/bootstrap/dist/js/bootstrap.min.js"></script>
+
+		<script type="text/javascript" src="/store/_ui/responsive/common/js/modal.js"></script>
+
+		<script type="text/javascript" src="/store/_ui/responsive/common/js/jquery.mask.js"></script>
+
+
+		<script type="text/javascript" src="/store/_ui/responsive/common/js/jquery-ui-1.11.2.min.js"></script>				
+		<script type="text/javascript" src="/store/_ui/responsive/common/js/acc.common.js"></script>
+
+		<script type="text/javascript" src="/store/_ui/addons/notificationaddon/responsive/common/js/notificationaddon.js"></script>
+		<script type="text/javascript" src="/store/_ui/addons/adyenv6b2ccheckoutaddon/responsive/common/js/adyen.checkout.js"></script>
+		<script type="text/javascript" src="/store/_ui/addons/b2bacceleratoraddon/responsive/common/js/acc.checkoutsummary.js"></script>
+		<script type="text/javascript" src="/store/_ui/addons/b2bacceleratoraddon/responsive/common/js/acc.paymentType.js"></script>
+		<script type="text/javascript" src="/store/_ui/addons/b2bacceleratoraddon/responsive/common/js/acc.replenishment.js"></script>
+		<script type="text/javascript" src="/store/_ui/addons/b2bacceleratoraddon/responsive/common/js/acc.orderform.js"></script>
+		<script type="text/javascript" src="/store/_ui/addons/b2bacceleratoraddon/responsive/common/js/acc.approval.js"></script>
+		<script type="text/javascript" src="/store/_ui/addons/stocknotificationaddon/responsive/common/js/stocknotificationaddon.js"></script>
+		<script type="text/javascript" src="/store/_ui/addons/assistedservicestorefront/responsive/common/js/assistedservicestorefront.js"></script>
+		<script type="text/javascript" src="/store/_ui/addons/assistedservicestorefront/responsive/common/js/jquery.tablesorter.pager.js"></script>
+		<script type="text/javascript" src="/store/_ui/addons/assistedservicestorefront/responsive/common/js/jquery.tablesorter.min.js"></script>
+		<script type="text/javascript" src="/store/_ui/addons/assistedservicestorefront/responsive/common/js/Chart.min.js"></script>
+		<script type="text/javascript" src="/store/_ui/addons/assistedservicestorefront/responsive/common/js/asm.storefinder.js"></script>
+		<script type="text/javascript" src="/store/_ui/responsive/common/slick/slick.js"></script>
+	<script type="text/javascript" src="/store/_ui/responsive/theme-pearson/scripts/bundle.js" charset="utf-8"></script>
+
+	<script>
+		$(document).ready(function() {
+			$('.slider').slick({
+				autoplay: true,
+  			autoplaySpeed: 4000
+			});
+		});
+	</script>
+
+	<script type='text/javascript'>
+		var initESW = function(gslbBaseURL) {
+			embedded_svc.menu.settings.language = 'pt-BR';
+			embedded_svc.menu.init(
+					'https://pearsonlatam.my.salesforce.com',
+					'https://d.la1-c1-ia5.salesforceliveagent.com/chat',
+					gslbBaseURL,
+					'00Dd0000000fkBh',
+					'Menu_Pearson'
+			);
+		};
+
+		var s = document.createElement('script');
+		s.setAttribute('src', 'https://pearsonlatam.my.salesforce.com/embeddedservice/menu/fab.min.js');
+
+		s.onload = function() {
+			initESW(null);
+		};
+
+		document.body.appendChild(s);
+
+		document.onclick = function() {
+			if(embedded_svc && !embedded_svc.settings.extraPrechatFormDetails) {
+				embedded_svc.settings.extraPrechatFormDetails = [{
+					"label": "URL",
+					"value":  window.location.href,
+					"displayToAgent": true,
+					"transcriptFields": ["URL__c"]
+				},
+					{
+						"label": "Assunto",
+						"transcriptFields": ["FormSubject__c"],
+						"displayToAgent":true
+					}];
+			}
+		};
+	</script>
+	
+	
+
+<div class="modal fade " id="globalMessageCommon" tabindex="-1" role="dialog" aria-labelledby="globalMessageLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <div class="col-md-12 col-xs-12 margin-top-20">
+                    <i class="glyphicon glyphicon-remove-circle hidden js-g-msg-danger-icon text-5 margin-bottom-10 color-danger"></i>
+                    <i class="glyphicon glyphicon-warning-sign hidden js-g-msg-warning-icon text-5 margin-bottom-10 color-warning"></i>
+                    <i class="glyphicon glyphicon-ok-circle hidden js-g-msg-success-icon text-5 margin-bottom-10 color-success"></i>
+                    <br>
+                    <span class="margin-top-20 text-3 js-pearson-common-msg">
+                    </span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div></body>
+</html>
