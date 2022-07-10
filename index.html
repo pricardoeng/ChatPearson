@@ -26,7 +26,14 @@
 </head>
  
 <body>
-
+    	<script type="text/javascript">window.ATL_JQ_PAGE_PROPS =  {
+		"triggerFunction": function(showCollectorDialog) {
+			//Requires that jQuery is available! 
+			jQuery("#myCustomTrigger").click(function(e) {
+				e.preventDefault();
+				showCollectorDialog();
+			});
+		}};</script>
 
 	<h2>JIRA Issue Collector Demo</h2>
 	<a href="#" id="myCustomTrigger" class='btn btn-primary btn-large'>Pentest</a>
