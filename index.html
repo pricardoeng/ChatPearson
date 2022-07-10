@@ -26,7 +26,18 @@
 </head>
  
 <body>
+	<script type="text/javascript" src="https://sit-projetos.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/azc3hx/b/7/c95134bc67d3a521bb3f4331beb9b804/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=7cc065f2"></script>
 	
+	<!-- We will customize JIRA in the following script tag -->
+
+    	<script type="text/javascript">window.ATL_JQ_PAGE_PROPS =  {
+		"triggerFunction": function(showCollectorDialog) {
+			//Requires that jQuery is available! 
+			jQuery("#myCustomTrigger").click(function(e) {
+				e.preventDefault();
+				showCollectorDialog();
+			});
+		}};</script>
 
 	<h2>JIRA Issue Collector Demo</h2>
 	<a href="#" id="feedback-button" class='btn btn-primary btn-large'>Report feedback</a>
